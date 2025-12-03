@@ -314,7 +314,7 @@ def getPredectionOneImage(image, model, show=True):
         cv2.putText(imageWithoutBorder,str(classIndex) + "   "+str(probVal), (50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,0,255),1)
     if show== True :
         showImage(image)
-    print(classIndex,probVal)
+    print(f"Prédiction : {classIndex[0]}, Confiance : {probVal*100:.2f}%")
     return classIndex[0] if probVal > minAccept else 0
 
 def getAllPreditions(boxes,model):

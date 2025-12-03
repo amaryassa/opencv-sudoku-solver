@@ -1,9 +1,5 @@
 # Sudoku Solver - Automatic Resolution with Local Model
 
-This project uses **OpenCV** and **deep learning** to automatically detect, recognize, and solve Sudoku grids from images or in real-time via webcam.
-
-The digit recognition model was **created from scratch**: from training data generation to training the convolutional neural network.
-
 ## 🎥 Quick Demo
 
 ### 📹 Video Demonstration
@@ -37,7 +33,6 @@ Want to see how it works? Choose your preferred method:
 - ⚡ Real-time processing (<100ms per frame)
 - 🎯 Automatic grid detection
 - 💚 Green overlay for solved digits
-- 🔄 Handles multiple grids dynamically
 
 ## 📂 Project Structure
 
@@ -82,12 +77,23 @@ To see a detailed overview of the step-by-step resolution process (contour detec
 
 ## 📦 Installation
 
+Prerequisite: install `uv` (recommended) to manage the virtual environment and dependencies.
+
+> macOS:
+
+- Homebrew: `brew install uv`
+- Or via pipx: `pipx install uv`
+
+> If you don't use `uv`, you can still run with a standard Python venv and `pip`, but the commands below assume `uv`.
+
 **Clone the repository and install dependencies:**
 
 ```bash
 git clone https://github.com/amaryassa/opencv-sudoku-solver.git
-cd sudoku
-pip install -r requirements.txt
+cd opencv-sudoku-solver
+uv sync
+uv python pin
+source .venv/bin/activate
 ```
 
 ## 🚀 Usage
@@ -95,8 +101,7 @@ pip install -r requirements.txt
 ### Resolution via webcam (real-time)
 
 ```bash
-cd sudoku-solver
-python sudoku_video.py
+uv run python sudoku-solver/sudoku_video.py
 ```
 
 Place a Sudoku grid in front of your webcam. The solution displays in real-time on the image. Press `q` to quit.
@@ -104,8 +109,7 @@ Place a Sudoku grid in front of your webcam. The solution displays in real-time 
 ### Resolution from an image
 
 ```bash
-cd sudoku-solver
-jupyter notebook sudoku_image.ipynb
+uv run jupyter notebook sudoku-solver/sudoku_image.ipynb
 ```
 
 Modify the image path in the notebook (default: `images/1.png`) and execute the cells to see the step-by-step resolution with visualizations.
@@ -127,8 +131,7 @@ Modify the image path in the notebook (default: `images/1.png`) and execute the 
 **Step 1 - Generate training data:**
 
 ```bash
-cd digit-training
-jupyter notebook generate_digit.ipynb
+uv run jupyter notebook digit-training/generate_digit.ipynb
 ```
 
 This will create ~40,000 digit images with different fonts and variations.
@@ -136,7 +139,7 @@ This will create ~40,000 digit images with different fonts and variations.
 **Step 2 - Train the CNN:**
 
 ```bash
-jupyter notebook digit_cnn_trainning.ipynb
+uv run jupyter notebook digit-training/digit_cnn_trainning.ipynb
 ```
 
 The model achieves ~95% accuracy after training.
@@ -147,10 +150,10 @@ The model achieves ~95% accuracy after training.
 cp model_trained.keras ../sudoku-solver/model/
 ```
 
-## 🔮 Future Improvements
+## 📚 Resources and Tutorials Followed
 
-- Support for handwritten grids
-- Graphical user interface (GUI)
-- Mobile application
-- Improved robustness to different lighting conditions
-- PDF solution export
+- [Formation Deep Learning Complète (2021) — YouTube playlist](https://www.youtube.com/watch?v=XUFLq6dKQok&list=PLO_fdPEVlfKoanjvTJbIbd9V5d9Pzp8Rw)
+- [OpenCV Sudoku Solver Step by Step — YouTube](https://www.youtube.com/watch?v=qOXDoYUgNlU)
+- [Tuto#18 - Sudoku: ne perdez pas le nord p.1 — YouTube](https://www.youtube.com/watch?v=WwPHs1SJrec)
+- [Tuto#18 - Sudoku: ne perdez pas le nord p.2 — YouTube](https://www.youtube.com/watch?v=XFNg8lXe-Tk)
+- [StackOverflow — How to get the cells of a Sudoku grid with OpenCV](https://stackoverflow.com/questions/59182827/how-to-get-the-cells-of-a-sudoku-grid-with-opencv)

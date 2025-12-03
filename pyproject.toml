@@ -1,0 +1,27 @@
+[project]
+name = "sudoku"
+version = "0.1.0"
+description = "Sudoku digit recognition and solver with CNN and OpenCV"
+readme = "README.md"
+requires-python = ">=3.8,<3.9"
+license = { text = "Proprietary" }
+authors = [
+  { name = "Amar YASSA" }
+]
+
+dependencies = [
+  "opencv-python>=4.5.0",
+  "numpy>=1.19.0",
+  # Use platform-appropriate TensorFlow; TF 2.8 is incompatible with Python 3.13
+  "tensorflow==2.12.*; sys_platform != 'darwin'",
+  "tensorflow-macos==2.12.*; sys_platform == 'darwin'",
+  "tensorflow-metal>=0.8; sys_platform == 'darwin'",
+  "scikit-learn>=0.24.0",
+  "matplotlib>=3.3.0",
+  "pillow>=8.0.0",
+  "jupyter>=1.0.0",
+]
+
+[tool.uv]
+package = true
+

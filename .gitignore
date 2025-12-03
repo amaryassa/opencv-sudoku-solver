@@ -1,0 +1,16 @@
+# Python-generated files
+
+# Ignore Python-generated files everywhere
+__pycache__/
+**/__pycache__/
+*.py[oc]
+**/*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+**/*.egg-info
+
+# Virtual environments
+.venv
+**/.venv

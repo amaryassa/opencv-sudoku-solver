@@ -2,6 +2,9 @@ import numpy as np
 import cv2
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
+import os
+
+
 
 ########### PARAMETERS ##############
 width = 640
@@ -11,7 +14,9 @@ cameraNo = 0
 #####################################
 
 #### LOAD THE TRAINNED MODEL 
-model = load_model('./model/model_trained.keras')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, '..' ,'model', 'model_trained.keras')
+model = load_model(model_path)
 #
 
 

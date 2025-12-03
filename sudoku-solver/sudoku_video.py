@@ -4,6 +4,9 @@ from tensorflow.keras.models import load_model
 from libs import sudukoSolver
 from utils import helpers
 import signal
+import os
+
+
 
 
 # Initialisation de la taille des images
@@ -30,8 +33,11 @@ seenAlready=''
 # Indicateur pour le temps écoulé
 flag = False
 # Chargement du modèle Keras pour la prédiction des chiffres
-model = load_model('./model/model_trained.keras')
 
+# Obtenir le chemin du dossier contenant ce script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, 'model', 'model_trained.keras')
+model = load_model(model_path)
 
 # Vérification si la caméra est ouverte
 if not cap.isOpened():
