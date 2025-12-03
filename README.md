@@ -6,7 +6,38 @@ The digit recognition model was **created from scratch**: from training data gen
 
 ## 🎥 Quick Demo
 
-Want to see the results right away? Check out the **[sudoku_image.ipynb](sudoku-solver/sudoku_image.ipynb)** notebook which visually displays each step of the resolution pipeline (contour detection, grid extraction, digit recognition, and solution display).
+### 📹 Video Demonstration
+
+Watch the full demonstration of the Sudoku solver in action:
+
+<p align="center">
+  <img src="demo.gif" alt="Sudoku Solver Demo">
+</p>
+
+> **Note**: If the demo doesn't display above, you can view it directly here : [demo.gif](https://github.com/amaryassa/opencv-sudoku-solver/blob/main/demo.gif)
+
+### 🔍 Try It Yourself
+
+Want to see how it works? Choose your preferred method:
+
+| Method                      | Description                                                                         | Command                                                     |
+| --------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| 📓 **Interactive Notebook** | Visual step-by-step walkthrough with detailed explanations of each processing stage | [Open sudoku_image.ipynb](sudoku-solver/sudoku_image.ipynb) |
+| 🎥 **Live Webcam**          | Real-time Sudoku detection and solving using your webcam                            | `cd sudoku-solver && python sudoku_video.py`                |
+
+#### 📓 Notebook Demo Features:
+
+- 🖼️ Visual output at each pipeline step
+- 🔍 Grid detection and contour analysis
+- 🧠 Digit recognition predictions
+- ✅ Solution overlay on original image
+
+#### 🎥 Webcam Demo Features:
+
+- ⚡ Real-time processing (<100ms per frame)
+- 🎯 Automatic grid detection
+- 💚 Green overlay for solved digits
+- 🔄 Handles multiple grids dynamically
 
 ## 📂 Project Structure
 
@@ -54,7 +85,7 @@ To see a detailed overview of the step-by-step resolution process (contour detec
 **Clone the repository and install dependencies:**
 
 ```bash
-git clone https://github.com/amaryassa/sudoku.git
+git clone https://github.com/amaryassa/opencv-sudoku-solver.git
 cd sudoku
 pip install -r requirements.txt
 ```
